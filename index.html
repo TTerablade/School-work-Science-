@@ -1,4 +1,43 @@
-<!Doctype HTML>
+<!DOCTYPE html>
 <html>
-<h1>QUIZBOT 2.0</h1>
+<head>
+  <title>My Board Game</title>
+  <style>
+    /* Your CSS styles go here */
+    .square {
+      width: 50px;
+      height: 50px;
+      border: 1px solid black;
+    }
+
+    .piece {
+      width: 20px;
+      height: 20px;
+      background-color: blue;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-board">
+    <div class="square"></div>
+    <div class="square"></div>
+    </div>
+  <div id="game-controls">
+    <button id="roll-dice">Roll Dice</button>
+  </div>
+  <script>
+    // JavaScript code for game logic
+    const board = document.getElementById('game-board');
+    const diceButton = document.getElementById('roll-dice');
+    const player1Piece = document.getElementById('player1-piece');
+
+    diceButton.addEventListener('click', () => {
+      // Roll the dice and update the player's position
+      const rollResult = Math.floor(Math.random() * 6) + 1;
+      // Move the player's piece based on the roll
+      player1Piece.style.left = `${rollResult * 50}px`;
+    });
+  </script>
+</body>
 </html>
